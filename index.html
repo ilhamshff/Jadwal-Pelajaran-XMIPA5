@@ -4,12 +4,21 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
     <title>Jadwal Pelajaran X MIPA 5 - SMAN 11</title>
   </head>
   <body>
+    <nav style="background: rgba( 255, 255, 255, 0.25 ); box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 ); backdrop-filter: blur( 11.0px ); -webkit-backdrop-filter: blur( 11.0px ); border-radius: 10px; border: 1px solid rgba( 255, 255, 255, 0.18 );">
+      <div class="container">
+        <div style="">
+           <h4 class="nama-surat m-0" style="font-weight: 600; justify-content: center; text-align: center;" id="jam"></h4>
+        </div>
+      </div>
+    </nav>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <div id="root" style="margin-top: 35px;"></div>
     <a class="footer" style="color: black;"></a>
 
     <script src="/src/index.jsx" type="module"></script>
@@ -40,4 +49,36 @@
     }
   })
   </script> -->
+<!-- Buat Jam -->
+  <script type="text/javascript">
+    window.onload = function() { jam(); }
+   
+    function jam() {
+     var e = document.getElementById('jam'),
+     d = new Date(), h, m, s;
+     h = d.getHours();
+     m = set(d.getMinutes());
+     s = set(d.getSeconds());
+     r = set(d.getMonth())
+     t = set(d.getFullYear())
+     d = set("0" + d.getDate()).slice(-2);
+   
+     e.innerHTML = d + '.' + r + '.' + t + ' | ' + h +':'+ m +':'+ s;
+   
+     setTimeout('jam()', 1000);
+    }
+   
+    function set(e) {
+     e = e < 10 ? '0'+ e : e;
+     return e;
+    }
+  </script>
+
+  <!-- Buat Tanggal -->
+
+  <!-- <script>
+    var dt = new Date();
+    document.getElementById("jam").innerHTML = (("0"+dt.getDate()).slice(-2)) +"."+ (("0"+(dt.getMonth()+1)).slice(-2)) +"."+ (dt.getFullYear()) +" "+ (("0"+dt.getHours()).slice(-2)) +":"+ (("0"+dt.getMinutes()).slice(-2))+":"+ (("0"+dt.getSeconds()).slice(-2));
+    setTimeout(dt, 1000)
+    </script> -->
 </html>
