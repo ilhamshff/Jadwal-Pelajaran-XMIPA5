@@ -11,7 +11,7 @@ function Header() {
     >
 
 
-      <a className={H.judul}>X MIPA 5 - SMANSE</a>
+      <a className={H.judul}>X MIPA 5 - SMAN 11 SEMARANG</a>
 
       
     </div>
