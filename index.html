@@ -3,9 +3,6 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
     <title>Jadwal Pelajaran X MIPA 5 - SMAN 11</title>
   </head>
@@ -19,36 +16,28 @@
     </nav>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root" style="margin-top: 35px;"></div>
-    <a class="footer" style="color: black;"></a>
+    <a class="footer" style="padding-top: 25px;"></a>
 
     <script src="/src/index.jsx" type="module"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </body>
 
+<script>
+  const Toast = Swal.mixin({
+  toast: true,
+  position: 'bottom-center',
+  showConfirmButton: false,
+  timer: 3000,
+  timerProgressBar: true,
+})
 
-  <!-- <script>
-    let timerInterval
-  Swal.fire({
-    title: 'Loading',
-    html: 'server log : connecting to databases',
-    timer: 5000,
-    timerProgressBar: true,
-    didOpen: () => {
-      Swal.showLoading()
-      const b = Swal.getHtmlContainer().querySelector('b')
-      timerInterval = setInterval(() => {
-        b.textContent = Swal.getTimerLeft()
-      }, 100)
-    },
-    willClose: () => {
-      clearInterval(timerInterval)
-    }
-  }).then((result) => {
-    if (result.dismiss === Swal.DismissReason.timer) {
-      console.log('I was closed by the timer')
-    }
-  })
-  </script> -->
+Toast.fire({
+  icon: 'success',
+  title: 'Connecting to : db.ilhamshf.space'
+})
+</script>
+
+
 <!-- Buat Jam -->
   <script type="text/javascript">
     window.onload = function() { jam(); }
